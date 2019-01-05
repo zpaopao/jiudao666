@@ -1,0 +1,9 @@
+/* components/epsoide/index.wxss */
+.container{display: inline-flex;flex-direction: row;height:60rpx;}
+.left-container{display: flex;flex-direction: row;align-items:baseline;}
+.text_num{font-size: 32rpx;}
+.line{height:44rpx;border-left: 1px solid #000;margin:0 14rpx;}
+.num{font-size: 60rpx;line-height:60rpx;font-weight: 800;}
+.right-container{display: flex;flex-direction: column;margin-top:5rpx;}
+.month{font-size: 24rpx;}
+.year{font-size: 20rpx;}

@@ -1,0 +1,4 @@
+/* pages/classic/classic.wxss */
+.top-contaier{height:100rpx;display: flex;flex-direction: row;align-items:center;justify-content: space-between;border-top:1px solid #f5f5f5;border-bottom:1px solid #f5f5f5;}
+.episolde{margin-left:20rpx;margin-top:4rpx;}
+.like{margin-top:6rpx;}
