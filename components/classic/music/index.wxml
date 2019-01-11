@@ -1,0 +1,7 @@
+<!--components/classic/music/index.wxml-->
+<view class="container">
+  <image class="img" src="{{pauseSrc}}" />
+  <image class="icon" src="images/player@waitting.png" />
+  <image class="left_img" />
+  <text class="text">{{content}}</text>
+</view>

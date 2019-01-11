@@ -28,7 +28,7 @@ Component({
    let year = date.getFullYear();
    let month = date.getMonth();
    this.setData({
-     year:year,
+    year, //对象属性值简写
      month:Months[month]
    })
   },

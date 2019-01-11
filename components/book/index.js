@@ -1,13 +1,10 @@
-// components/classic/movie/index.js
-import {classicBeh} from '../classic-beh.js'
+// components/book/index.js
 Component({
-
-  behaviors:[classicBeh],
   /**
    * 组件的属性列表
    */
   properties: {
-    
+
   },
 
   /**

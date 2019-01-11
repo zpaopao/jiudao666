@@ -1,0 +1,4 @@
+/* components/navi/index.wxss */
+.container{display: flex;flex-direction: row;align-items: center;justify-content: space-between;height:80rpx;background:#f7f7f7;border-radius: 2rpx;width:600rpx;}
+.img{width:80rpx;height:80rpx;}
+.text{font-size: 28rpx;}

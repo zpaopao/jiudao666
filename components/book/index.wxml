@@ -1,0 +1,6 @@
+<!--components/book/index.wxml-->
+<view>
+  <image />
+  <text>{{num}}喜欢</text>
+  
+</view>
