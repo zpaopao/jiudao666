@@ -1,6 +1,7 @@
 {
   "pages":[
         "pages/book/book",
+        "pages/bookDetail/bookDetail",
     "pages/classic/classic",
 
     "pages/my/my"

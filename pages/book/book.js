@@ -1,4 +1,5 @@
 import {BookModel} from '../../models/book.js'
+
 let bookModel = new BookModel
 
 Page({
@@ -7,19 +8,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    bookList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    bookModel.getBookList((res)=>{
+    bookModel.getBookList(
+      (res)=>{
       this.setData({
         bookList:res
       })
-     console.log(this.data)
+    }
+    )  
+  },
+  bookClick:function(res){
+    console.log(res)
+    let bId = res.detail.bId
+    wx.navigateTo({
+      url:`/pages/bookDetail/bookDetail?id=${bId}`
     })
+  },
+  onSearchTap:function(e){
     
   },
 

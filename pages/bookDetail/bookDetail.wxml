@@ -1,0 +1,95 @@
+<wxs src="../../utils/filter.wxs" module="util" />
+
+
+<view class='container'>
+  <view class='head'>
+    <image src="{{bookDetail.image}}" />
+    <text class='title'>{{bookDetail.title}}</text>
+    <text class='author'>{{bookDetail.author}}</text>
+  </view>
+  <view class='sub_container'>
+    <text class='headLine'>短评</text>
+     <text class='shadow' wx:if="{{contents==false}}">还没有短评</text>
+    <view class='mark-box'>
+      <block wx:for="{{util.limit(contents,10)}}" wx:key="">
+        <v-mark tag-class="ex-tag" content="{{item.content}}">
+          <text class="num" slot="after">{{'+'+item.nums}}</text>
+        </v-mark>
+        <!-- <v-mark tag-class="{{index == 0? 'ex-tag1':''|| index ==1 ? 'ex-tag2':''}}" content="{{item.content}}">
+            <text class="num" slot="after">{{'+'+item.nums}}</text>
+          </v-mark> -->
+      </block>
+    </view>
+  </view>
+  <view class='sub_container'>
+    <text class='headLine'>内容简介</text>
+    <text class="content" decode='true'>{{util.format(bookDetail.summary)}}</text>
+  </view>
+  <view class='sub_container'>
+    <text class='headLine'>书本信息</text>
+    <view class='detail_container'>
+      <view class='vertical description'>
+        <text>出版社</text>
+        <text>出版年</text>
+        <text>页数</text>
+        <text>定价</text>
+        <text>装帧</text>
+      </view>
+      <view class='vertical'>
+        <text>{{bookDetail.publisher}}</text>
+        <text>{{bookDetail.pubdate}}</text>
+        <text>{{bookDetail.pages}}</text>
+        <text>{{bookDetail.price}}</text>
+        <text>{{bookDetail.binding}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='post-container' wx:if="{{!posting}}">
+  <view class='post-fake' bind:tap="onPostTap">
+    <text>输入短评</text>
+  </view>
+  <view class='like-container'>
+    <v-like bind:like="onLike" class="like" count="{{like.fav_nums}}" likeStauts="{{like_status}}" />
+  </view>
+</view>
+<view class='posting-container' wx:if="{{posting}}">
+  <view class='post-header'>
+    <text wx:if="{{contents==true}}">仅可点击标签+1</text>
+    <text wx:else>暂无短评</text>
+    <text class='cancle' bindtap="onCancle">取消</text>
+  </view>
+  <view class='comment-container'>
+    <view class='mark-box'>
+      <block wx:for="{{util.limit(contents,3)}}" wx:key="">
+        <v-mark tag-class="{{tool.highlight(index)}}" bind:taping="onTapingTap" content="{{item.content}}">
+         <text class="num" slot="after">{{'+'+item.nums}}</text>
+        </v-mark>
+      </block>
+    </view>
+  </view>
+  <input class='post' bindconfirm='onTapingTap'  placeholder='短片最多12个字' />
+</view>
+
+<v-mask wx:if="{{posting}}"/>
+
+
+
+<wxs module="tool">
+   var highlight=function(index){
+     if(index ==0){
+        return 'ex-tag1'
+     }
+     if(index==1){
+        return 'ex-tag2'
+     }
+     return ''
+
+   }
+   module.exports={
+      highlight:highlight
+   }
+
+
+</wxs>
