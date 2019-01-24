@@ -11,6 +11,7 @@
     "navigationBarTitleText": "Demo"
   },
   "tabBar":{
+    "custom":true,
     "selectedColor":"#000",
     "backgroundColor":"#fff",
     "color":"#c7c7c7",
@@ -25,7 +26,8 @@
         "pagePath": "pages/book/book",
         "text": "书籍",
         "iconPath": "images/tab/book.png",
-        "selectedIconPath": "images/tab/book@highlight.png"
+        "selectedIconPath": "images/tab/book@highlight.png",
+        "isSpecial":true
       },
       {
         "pagePath": "pages/my/my",
